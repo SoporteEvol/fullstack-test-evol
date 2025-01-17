@@ -1,0 +1,60 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Build directories
+dist/
+build/
+
+
+*/node_modules/
+*/dist/
+*/build/
+*/logs/
+*/*.log
+*/.env
+*/.env.test
+
+# Frontend specific
+.vite/
+*/.vite/
+.vite-cache/
+*/.vite-cache/
+*.css.map
+*.js.map
+
+# IDE specific
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+
+# MacOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
