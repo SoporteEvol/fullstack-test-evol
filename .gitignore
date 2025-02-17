@@ -1,0 +1,53 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Logs
+*.log
+*.log.*
+
+# IDE configuration files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Environment variables
+.env
+
+# Build directories
+dist/
+build/
+
+# Frontend (React + Vite)
+# Vite build folder
+vite/
+
+# Frontend (React)
+# React build files
+/public/build/
+
+# Backend (NestJS)
+# Build folder for NestJS
+/dist/
+*.tsbuildinfo
+
+# Coverage (Jest)
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# NPM/Yarn cache
+.pnp/
+.pnp.js
