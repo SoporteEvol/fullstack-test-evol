@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FullStack</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <center>
+        <h1>Prueba FullStack</h1>
+
+        <form id="task-form">
+            <br><input type="text" id="title" placeholder="Título" required> </br>
+            <br> <textarea id="description" placeholder="Descripción" required></textarea> </br>
+            <br><input type="date" id="dueDate"></br>
+            <br><input type="text" id="tags" placeholder="Etiquetas (separadas por comas)"></br>
+            <br> <button type="submit" id="fetchDataBtn">Agregar Tarea</button></br>
+        </form>
+        <h2>Lista</h2>
+        <div id="task-list"></div>
+    </div>
+
+    <script src="app.js"></script>
+</center>
+</body>
+</html>
