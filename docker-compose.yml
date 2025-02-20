@@ -1,0 +1,54 @@
+services:
+  # Base de Datos (PostgreSQL)
+  postgres:
+    image: postgres:14
+    container_name: postgres_todo
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: todo_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d todo_db"]
+      interval: 5s
+      retries: 5
+      start_period: 10s
+
+  # Backend (NestJS)
+  backend:
+    build: ./todo-backend
+    container_name: backend_todo
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: todo_db
+
+  # Frontend (React + Vite)
+  frontend:
+    build: ./todo-frontend
+    container_name: frontend_todo
+    restart: always
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./todo-frontend:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
